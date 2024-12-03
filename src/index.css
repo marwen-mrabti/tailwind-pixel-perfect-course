@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+
+@layer base {
+  :root {
+/*define light theme variables  */
+  }
+
+  .dark{
+/*define dark theme variables */
+  }
+}
+
+
+@theme {
+
+
+
+}
