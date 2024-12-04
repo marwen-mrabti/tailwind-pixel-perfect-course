@@ -31,7 +31,10 @@ function App() {
           </h1>
           <p className="mt-4 text-base text-slate-600 sm:text-lg md:mt-6 md:text-xl">
             Check the{" "}
-            <a href="#" className="text-black underline underline-offset-2">
+            <a
+              href="#"
+              className="active:ring-highlight text-black underline underline-offset-2 transition-all duration-200 ease-in-out hover:no-underline active:underline active:ring-2"
+            >
               getting started
             </a>{" "}
             guide file for how to get your project off the ground!
@@ -43,7 +46,7 @@ function App() {
             <li
               key={href}
               className={cn(
-                "bg-highlight/7 shadow-highlight/50 size-20 overflow-hidden rounded-2xl shadow-md sm:size-24",
+                "bg-highlight/7 hover:bg-highlight/10 shadow-highlight/50 focus:ring-highlight size-20 overflow-hidden rounded-2xl inset-shadow-sm shadow-md transition-all duration-200 ease-in-out hover:-rotate-z-6 focus:ring-2 focus:ring-offset-2 sm:size-24",
                 columnClasses[column],
                 rowClasses[row],
               )}
