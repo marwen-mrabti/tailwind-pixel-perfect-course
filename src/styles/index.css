@@ -72,31 +72,80 @@
 
 @layer base {
   :root {
+    --body-color: #070707;
+    --body-background: fixed
+        linear-gradient(#070707, #070707 1px, transparent 6px, transparent),
+      fixed linear-gradient(transparent, #fff 70%),
+      fixed
+        repeating-linear-gradient(
+          #efefef,
+          #efefef 1px,
+          transparent 1px,
+          transparent 40px
+        ),
+      fixed
+        repeating-linear-gradient(
+          to right,
+          #efefef,
+          #efefef 1px,
+          transparent 1px,
+          transparent 40px
+        )
+        white;
+
     /*define light theme variables  */
-    --black: #000000;
     --highlight: #6202ff;
-    --highlight-7: color-mix(in hsl, var(--highlight) 7%, transparent);
-    --slate-600: #475569;
+    --background: #f7f0f0;
+  }
+
+  .dark {
+    --body-color: #fff;
+    --body-background: fixed
+        linear-gradient(#fbe331, #fbe331 1px, transparent 6px, transparent),
+      fixed linear-gradient(transparent, #070707 70%),
+      fixed
+        repeating-linear-gradient(
+          #2b2b2b,
+          #2b2b2b 1px,
+          transparent 1px,
+          transparent 40px
+        ),
+      fixed
+        repeating-linear-gradient(
+          to right,
+          #2b2b2b,
+          #2b2b2b 1px,
+          transparent 1px,
+          transparent 40px
+        )
+        #070707;
+
+    /*define light theme variables  */
+    --highlight: #3a0492;
+    --background: #080808;
+  }
+
+  body {
+    color: var(--body-color);
+    background: var(--body-background);
   }
 }
+
+@variant dark (&:where(.dark, .dark *));
 
 @theme {
   /* breakpoint definition */
   --breakpoint-sm: 520px;
-  --breakpoint-md: 768px;
   --breakpoint-lg: 976px;
-  --breakpoint-xl: 1280px;
 
   /* font definition */
   --font-poppins: "Poppins", "sans-serif";
-  --text-"4.5xl": 2.625rem; /* 👀*/
-  --text-"4.5xl"--line-height: 1.15; /* 👀*/
-  --text-5.5xl: 3.375rem; /* 👀*/
-  --text-5.5xl--line-height: 1; /* 👀*/
+  --text-4_5xl: 2.625rem;
+  --text-4_5xl--line-height: 1.15;
+  --text-5xl: 3.375rem;
+  --text-5xl--line-height: 1;
 
   /* colors definition */
-  --color-black: var(--black);
+  --color-background: var(--background);
   --color-highlight: var(--highlight);
-  --color-highlight-7: var(--highlight-7);
-  --color-slate-600: var(--slate-600);
 }
