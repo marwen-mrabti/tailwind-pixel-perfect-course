@@ -19,6 +19,8 @@
     line-height: 1.5;
     /* 4. Improve text rendering */
     -webkit-font-smoothing: antialiased;
+    max-width: 100%;
+    overflow-x: clip;
   }
 
   /* 5. Improve media defaults */

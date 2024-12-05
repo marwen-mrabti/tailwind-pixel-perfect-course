@@ -21,7 +21,7 @@ const rowClasses: Record<(typeof logos)[number]["row"], string> = {
 
 function App() {
   return (
-    <main className="mx-auto grid min-h-dvh w-dvw place-items-center overflow-x-clip bg-transparent px-4 py-16">
+    <main className="mx-auto grid min-h-dvh w-dvw place-items-center bg-transparent px-4 py-16">
       <div className="grid place-items-center gap-12 sm:gap-16 xl:max-w-7xl xl:grid-cols-[auto_1fr] xl:grid-rows-6 xl:gap-x-24 xl:gap-y-4">
         <div
           className={cn(
