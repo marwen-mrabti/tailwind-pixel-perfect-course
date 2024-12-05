@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "open-props/easings";
 
 @layer base {
   /* 1. Use a more-intuitive box-sizing model */
@@ -73,11 +74,10 @@
 @layer base {
   :root {
     --body-color: #070707;
-    --body-background: fixed
-        linear-gradient(#070707, #070707 1px, transparent 6px, transparent),
-      fixed linear-gradient(transparent, #fff 70%),
+    --body-background: fixed linear-gradient(transparent, #fff 70%),
       fixed
         repeating-linear-gradient(
+          to bottom,
           #efefef,
           #efefef 1px,
           transparent 1px,
@@ -100,11 +100,10 @@
 
   .dark {
     --body-color: #fff;
-    --body-background: fixed
-        linear-gradient(#fbe331, #fbe331 1px, transparent 6px, transparent),
-      fixed linear-gradient(transparent, #070707 70%),
+    --body-background: fixed linear-gradient(transparent, #070707 70%),
       fixed
         repeating-linear-gradient(
+          to bottom,
           #2b2b2b,
           #2b2b2b 1px,
           transparent 1px,
@@ -148,4 +147,66 @@
   /* colors definition */
   --color-background: var(--background);
   --color-highlight: var(--highlight);
+
+  /* animation definition */
+  --animate-fade-in: fade-in 0.4s ease-in-out backwards;
+  --animate-slide-up: slide-up 0.3s ease-in-out backwards;
+  --animate-slide-left: slide-left 0.3s ease-in-out backwards;
+  --animate-slide-right: slide-right 0.3s ease-in-out backwards;
+  --animate-roll-reveal: roll-reveal 0.4s var(--ease-spring-3) backwards;
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-left {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-right {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes roll-reveal {
+    from {
+      opacity: 0;
+      transform: rotate(12deg) scale(0);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+  }
 }
