@@ -21,14 +21,20 @@ const rowClasses: Record<(typeof logos)[number]["row"], string> = {
 
 function App() {
   return (
-    <main className="grid min-h-dvh max-w-dvw place-items-center overflow-x-clip bg-transparent px-4 py-16">
-      <div className="grid place-items-center gap-12 sm:gap-16 xl:grid-cols-[auto_1fr] xl:gap-24">
-        <div className="flex w-full max-w-md flex-col items-center text-center xl:order-2 xl:items-start xl:text-left">
-          <EpicStackLogo className="animate-slide-up xl:animate-slide-left size-20 xl:[animation-delay:500ms]" />
+    <main className="mx-auto grid min-h-dvh w-dvw place-items-center overflow-x-clip bg-transparent px-4 py-16">
+      <div className="grid place-items-center gap-12 sm:gap-16 xl:max-w-7xl xl:grid-cols-[auto_1fr] xl:grid-rows-6 xl:gap-x-24 xl:gap-y-4">
+        <div
+          className={cn(
+            "flex w-full max-w-md flex-col items-center text-center",
+            // breakpoint xl
+            "xl:col-start-2 xl:row-span-2 xl:row-start-3 xl:grid xl:max-w-none xl:grid-cols-[auto_1fr] xl:grid-rows-subgrid xl:gap-x-4 xl:text-left",
+          )}
+        >
+          <EpicStackLogo className="animate-slide-up xl:animate-slide-left size-20 xl:col-start-1 xl:row-start-1 xl:[animation-delay:500ms]" />
           <h1
             className={cn(
               //styling
-              "sm:text-4.5xl lg:text-5.5xl mt-6 text-4xl font-medium text-black md:mt-8 md:text-5xl",
+              "sm:text-4.5xl lg:text-5.5xl mt-6 text-4xl font-medium text-black md:mt-8 md:text-5xl xl:col-start-2 xl:row-start-1 xl:mt-0",
               //animations
               "animate-slide-up xl:animate-slide-left [animation-delay:300ms] xl:[animation-delay:800ms]",
             )}
@@ -38,7 +44,7 @@ function App() {
           <p
             className={cn(
               //styling
-              "xl: mt-4 text-base text-slate-600 sm:text-lg md:mt-6 md:text-xl",
+              "text-base text-slate-600 sm:text-lg md:mt-6 md:text-xl xl:col-span-2 xl:mt-0",
               //animations
               "animate-slide-up xl:animate-slide-left [animation-delay:800ms] xl:[animation-delay:1300ms]",
             )}
@@ -54,7 +60,7 @@ function App() {
           </p>
         </div>
 
-        <ul className="flex w-full max-w-3xl flex-wrap items-center justify-center gap-2 sm:gap-4 xl:grid xl:grid-flow-col xl:grid-cols-5 xl:grid-rows-6">
+        <ul className="flex w-full max-w-3xl flex-wrap items-center justify-center gap-2 sm:gap-4 xl:row-span-6 xl:grid xl:grid-flow-col xl:grid-cols-5 xl:grid-rows-subgrid">
           {logos.map(({ src, alt, href, column, row }, index) => (
             <li
               key={href}
