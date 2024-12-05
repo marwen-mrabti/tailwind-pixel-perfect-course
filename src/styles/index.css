@@ -140,7 +140,7 @@
   --breakpoint-lg: 976px;
 
   /* font definition */
-  --font-poppins: "Poppins", "sans-serif";
+  --font-family-poppins: "Poppins", "sans-serif";
   --text-4_5xl: 2.625rem;
   --text-4_5xl--line-height: 1.15;
   --text-5xl: 3.375rem;
