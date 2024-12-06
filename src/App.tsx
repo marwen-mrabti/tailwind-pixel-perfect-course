@@ -34,7 +34,7 @@ function App() {
           <h1
             className={cn(
               //styling
-              "sm:text-4.5xl lg:text-5.5xl mt-6 text-4xl font-medium text-black md:mt-8 md:text-5xl xl:col-start-2 xl:row-start-1 xl:mt-0",
+              "sm:text-4.5xl lg:text-5.5xl xl:text-5.5xl mt-6 text-4xl font-medium text-black md:mt-8 md:text-5xl xl:col-start-2 xl:row-start-1 xl:mt-0",
               //animations
               "animate-slide-up xl:animate-slide-left [animation-delay:300ms] xl:[animation-delay:800ms]",
             )}

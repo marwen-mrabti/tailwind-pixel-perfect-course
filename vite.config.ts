@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
 const ReactCompilerConfig = {
-  version: '19.0.0-rc.1',
+  version: '19.0.0',
 }
 
 // https://vite.dev/config/
